@@ -1,0 +1,20 @@
+{
+    "name": "madieume/examen-php-tailwind",
+    "autoload": {
+        "psr-4": {
+            "Boutik\\": "src/",
+            "Boutik\\Models\\": "src/models/",
+            "Boutik\\Controllers\\": "src/controllers/",
+            "Boutik\\Core\\": "src/core/"
+
+
+        }
+    },
+    "authors": [
+        {
+            "name": "Madieume",
+            "email": "madieumediop99@gmail.com"
+        }
+    ],
+    "require": {}
+}

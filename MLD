@@ -1,0 +1,8 @@
+client(idcl,nomcl,prenomcl,telephone,email,adresse,sexe,photo)
+dette(iddet,numerodet,datedet,montantdet,#idClient)
+paiement(idpaie,numeropaie,datepaie,montantpaie,#idDette)
+article(idar,refar,libar,prixU,qteStock)
+profile(idprof,libprof)
+users(idu,nomu,prenomu,login,mdp,categorie,#idProfile)
+depot(iddep,numerodep,montantdep,datedep,#idClient)
+artdette(#idDette,#idArticle,qte,prix)

@@ -1,0 +1,13 @@
+/* style.css */
+
+.image-container {
+    text-align: center; /* Centrer l'image horizontalement */
+    margin-top: 20px; /* Ajouter de l'espace en haut de l'image */
+}
+
+.image-container img {
+    width: 200px; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique pour garder les proportions */
+    border-radius: 10px; /* Bords arrondis de l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre autour de l'image */
+}
