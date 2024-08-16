@@ -1,3 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <nav class="fixed top-0  z-50 w-full bg-pink-900 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
@@ -34,7 +46,7 @@
    <div class="h-full px-3 pb-4 overflow-y-auto bg-pink-900 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
          <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="<?=WEBROOT?>?controller=dashboard"class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <span class="material-icons mx-2">dashboard</span>
                <span class="ms-3">Dashboard</span>
             </a>
@@ -46,15 +58,15 @@
                <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300"></span>
             </a>
          </li>
-         <li>
+         <!-- <li>
             <a href="<?=WEBROOT?>?controller=paiement" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <span class="material-icons mx-2">payment</span>
                <span class="flex-1 ms-3 whitespace-nowrap">Paiement</span>
                <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800  rounded-full dark:bg-blue-900 dark:text-blue-300"></span>
             </a>
-         </li>
+         </li> -->
          <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="<?=WEBROOT?>?controller=client"class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <span class="material-icons mx-2">person</span>
                <span class="flex-1 ms-3 whitespace-nowrap">Client</span>
             </a>
@@ -71,3 +83,9 @@
       </ul>
    </div>
 </aside>
+
+
+
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+</body>
+</html>

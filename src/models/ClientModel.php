@@ -1,45 +1,28 @@
 <?php
-class Client {
-    private $conn;
-    private $table = 'clients';
+namespace Boutik\Models;
+class ClientModel {
 
-    public $id;
-    public $nom;
-    public $prenom;
-    public $telephone;
-    public $email;
-    public $adresse;
-    public $categorie;
-    public $photo;
 
-    public function __construct($db) {
-        $this->conn = $db;
+    public function findPaiement() {
+        $sql="SELECT * FROM `paiement`p join `dette` d on p.idDette=d.iddet";
+        $pdo= new \PDO('mysql:host=localhost;dbname=semestre2', "root", "");
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+        $result=$pdo->query($sql);
+        return $result->fetchAll();
     }
 
-    public function getClients() {
-        $query = "SELECT * FROM " . $this->table;
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt;
-    }
-
-    public function getClientById($id) {
-        $query = "SELECT * FROM " . $this->table . " WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        return $stmt->get_result()->fetch_assoc();
-    }
-
-    public function createClient() {
-        $query = "INSERT INTO " . $this->table . " SET nom = ?, prenom = ?, telephone = ?, email = ?, adresse = ?, categorie = ?, photo = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("sssssss", $this->nom, $this->prenom, $this->telephone, $this->email, $this->adresse, $this->categorie, $this->photo);
-        if($stmt->execute()) {
-            return true;
+    public function addPaiement(array $data) {
+        $sql="INSERT INTO `paiement` (`numero`, `date`, `montant`,`iddette`) VALUES (:numero,:date,:montant,:iddette)";
+        $pdo= new \PDO('mysql:host=localhost;dbname=semestre2', "root", "");
+        $stm = $pdo->prepare($sql);
+        $stm->execute($data);
+        return $pdo->lastInsertId();   
         }
-        return false;
-    }
-}
-?>
+      
 
+}
+
+
+       
+  
